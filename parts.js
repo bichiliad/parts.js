@@ -30,6 +30,15 @@ function calm_down(fn, calm) {
 
 }
 
+// Given a url to a script tag, attempts to inject the script into the DOM.
+// Good for loading things only when they're needed.
+function load_script(url) { 
+  var script=document.createElement('script');
+  script.setAttribute("type","text/javascript");
+  script.setAttribute("src", url);
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
+
 /*
  * EVENTING
  *************************************/
